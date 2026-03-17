@@ -40,7 +40,18 @@ def rmse_loss(y:npt.ArrayLike, y_pred:npt.ArrayLike) -> float:
     """Root mean squared error loss function"""
     return math.sqrt(mse_loss(y, y_pred))
 
-#Testing
-pred = [34 + (-4.6*2.37)]
-label = [24]
-print(l2_loss(label, pred))
+#Matrix implementation of linear regression 9multivariate with multiple weights)
+def solve_normal(X:np.matrix, y:npt.ArrayLike) -> npt.ArrayLike:
+    return np.matrix.inverse((X @ X.T)) @ X.T @ y
+
+X = np.matrix([[0.496714, -0.138264],[0.647689, 1.523030]])
+y = np.array([4.200494, 1.205865])
+
+dia = X.T @ X
+dia2 = X.T @ y
+
+print(dia)
+
+print(dia2)
+
+print(solve_normal(X,y))
