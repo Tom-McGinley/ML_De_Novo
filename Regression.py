@@ -7,8 +7,8 @@ class Regression():
         self.data = data 
 
     #Least Squares Part
-    B = np.array([])
 
+    
 
     """
     Regression Blueprint:
